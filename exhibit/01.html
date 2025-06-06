@@ -2,14 +2,29 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
+  <!-- 这行确保浏览器按照设备宽度来渲染，而不是按 PC 浏览器来缩放 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>展品 01 介绍</title>
   <style>
-    body, html { margin: 0; padding: 0; }
-    img { display: block; max-width: 100%; height: auto; }
+    /* 去掉默认的留白，让图片可以真正占满整个可视宽度 */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+    /* 关键在这里，让 <img> 始终按容器（页面）宽度 100% 来缩放 */
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
-  <img src="../assets/exhibit_01.jpg" alt="展品 01 介绍" />
+  <!-- 假设 GitHub Pages 的文件结构是：
+       /assets/exhibit_01.jpg
+       /exhibit/01.html
+     那么这里 src 可以写成 "/assets/exhibit_01.jpg" -->
+  <img src="/assets/exhibit_01.jpg" alt="展品 01 介绍" />
 </body>
 </html>
